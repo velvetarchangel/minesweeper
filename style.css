@@ -1,0 +1,228 @@
+* {
+    font-family: Impact;
+    font-size: 1.3rem;
+}
+
+body {
+    background: rgb(255, 237, 179);
+}
+
+.clock {
+    text-align: center;
+    visibility: hidden;
+}
+
+.flag {
+    padding-left: 10px;
+    visibility: hidden;
+}
+
+.card{
+    background-image: url(assets/light_green.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, serif;
+    font-weight: bold;
+    font-size: 0.5em;
+    text-align: left;
+    width: auto;
+    height: auto;
+    border-width: 5px;
+    border-color: green;
+    margin: 1px;
+    /*opacity: 0.9;*/
+    /*transform: rotateY(180deg);*/
+
+    /*animation: fadeIn 0.5s;*/
+    /*animation-fill-mode: forwards;*/
+}
+
+.card.zero{
+    background-image: url(assets/0.png) ;
+}
+.card.one{
+    background-image: url(assets/1.png);
+}
+.card.two{
+    background-image: url(assets/2.png);
+}
+.card.three{
+    background-image: url(assets/3.png);
+}
+.card.four{
+    background-image: url(assets/4.png);
+}
+.card.five{
+    background-image: url(assets/5.png);
+}
+.card.six{
+    background-image: url(assets/6.png);
+}
+.card.seven{
+    background-image: url(assets/7.png);
+}
+.card.eight{
+    background-image: url(assets/8.png);
+}
+
+.card.mark{
+    background-image: url(assets/light_green_w_flag.png);
+}
+
+.card.bomb {
+    background-image: url('assets/bomb.png');
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    border-radius: 10px;
+    /*padding:5px;*/
+    width: calc(70vh);
+}
+
+.grid > div::before {
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.menuButton {
+    padding: 5px 0.5em ;
+    border: 0px solid gray;
+    background-color: rgba(128, 128, 128, 0.233);
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 0.5em;
+    font-size:1em;
+}
+
+.menuButton:hover {
+    color: white;
+    background: black;
+}
+
+.gridwrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#lostMsg {
+    justify-content: center;
+    text-align: center;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 0s;
+    transition: all 0s;
+
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+#overlay * {
+    pointer-events: none;
+}
+
+#overlay.active {
+    visibility: visible;
+    animation: fadeIn 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#overlayin {
+    padding: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px black;
+}
+
+#overlayin p {
+    text-align: center;
+    font-size: 1em;
+}
+
+p.big {
+    font-size: 2em !important;
+}
+
+p.darker {
+    color: #aaa;
+}
+
+p.glow {
+    animation: glow 1s infinite alternate-reverse;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px rgb(255, 255, 0); }
+    to { text-shadow: 0 0 20px rgb(255, 115, 0); }
+}
+
+#overlay.active #overlayin {
+    opacity: 0;
+    animation: spinIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#overlayin * {
+    margin: 0px;
+}
+
+#sound {
+    width: 40px;
+    height: 30px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*content: url('sound-on.webp');*/
+    display: block;
+    outline: none;
+    user-select: none;
+}
+
+#sound:checked {
+    content: url('assets/sound-off.webp');
+}
+
+.status {
+    margin-top: 5px;
+    text-align: center;
+    color: gray;
+}

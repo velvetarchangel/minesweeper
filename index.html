@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <title>Minesweeper</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="menu">
+    <div class="menuButton" data-mode="Easy">Easy</div>
+    <div class="menuButton" data-mode="Medium">Medium</div>
+    <div class="menuButton" data-mode="Hard">Hard</div>
+    <div class="clock"><img src="assets/timer.png">
+        <div id="timer"></div>
+    </div>
+    <div class="flag"><img src="assets/red-flag.png">
+        <div id="numflags"></div>
+    </div>
+</div>
+<div class="gridwrapper">
+    <div class="grid"></div>
+</div>
+
+<div id="lostMsg">
+</div>
+<!--<div id="overlay">-->
+<!--    <div id="overlayin">-->
+<!--        <p class="big glow">Congratulations, you won!!!</p>-->
+<!--        <p class="darker">Click anywhere to start a new game.</p>-->
+<!--    </div>-->
+<!--</div>-->
+
+<script src="MSgameEngine.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
