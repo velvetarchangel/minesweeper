@@ -7,6 +7,19 @@ body {
     background: rgb(255, 237, 179);
 }
 
+@media screen and (max-width: 800px){
+    body {
+        background: rgb(255, 237, 179);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        height: 100vh;
+        width: 100vw;
+        margin: 0px;
+    }
+}
+
 .clock {
     text-align: center;
     visibility: hidden;
@@ -30,11 +43,14 @@ body {
     border-width: 5px;
     border-color: green;
     margin: 1px;
-    /*opacity: 0.9;*/
-    /*transform: rotateY(180deg);*/
+}
 
-    /*animation: fadeIn 0.5s;*/
-    /*animation-fill-mode: forwards;*/
+.card:hover {
+
+}
+
+.card.darK{
+    background-image: url(assets/dark_green.png);
 }
 
 .card.zero{
@@ -87,15 +103,6 @@ body {
     display: block;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    height: 100vh;
-    width: 100vw;
-    margin: 0px;
-}
 
 .menu {
     display: flex;
@@ -104,6 +111,15 @@ body {
     flex-wrap: wrap;
     align-items: center;
 }
+
+.accessories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 
 .menuButton {
     padding: 5px 0.5em ;
@@ -126,100 +142,84 @@ body {
     align-items: stretch;
 }
 
-#lostMsg {
+#winlossMsg {
     justify-content: center;
     text-align: center;
 }
 
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-    opacity: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: 0s;
-    transition: all 0s;
+/*#overlay {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    background: rgba(0, 0, 0, 0.7);*/
+/*    z-index: 999;*/
+/*    opacity: 1;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    animation: 0s;*/
+/*    transition: all 0s;*/
 
-    visibility: hidden;
-    animation-fill-mode: forwards;
-}
-#overlay * {
-    pointer-events: none;
-}
+/*    visibility: hidden;*/
+/*    animation-fill-mode: forwards;*/
+/*}*/
+/*#overlay * {*/
+/*    pointer-events: none;*/
+/*}*/
 
-#overlay.active {
-    visibility: visible;
-    animation: fadeIn 0.5s;
-    animation-fill-mode: forwards;
-}
+/*#overlay.active {*/
+/*    visibility: visible;*/
+/*    animation: fadeIn 0.5s;*/
+/*    animation-fill-mode: forwards;*/
+/*}*/
 
-#overlayin {
-    padding: 1em;
-    padding-left: 4em;
-    padding-right: 4em;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: rgb(255, 255, 255);
-    box-shadow: 0 0 20px black;
-}
+/*#overlayin {*/
+/*    padding: 1em;*/
+/*    padding-left: 4em;*/
+/*    padding-right: 4em;*/
+/*    background-color: rgba(0, 0, 0, 0.5);*/
+/*    border-radius: 5px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*    color: rgb(255, 255, 255);*/
+/*    box-shadow: 0 0 20px black;*/
+/*}*/
 
-#overlayin p {
-    text-align: center;
-    font-size: 1em;
-}
+/*#overlayin p {*/
+/*    text-align: center;*/
+/*    font-size: 1em;*/
+/*}*/
 
-p.big {
-    font-size: 2em !important;
-}
+/*p.big {*/
+/*    font-size: 2em !important;*/
+/*}*/
 
-p.darker {
-    color: #aaa;
-}
+/*p.darker {*/
+/*    color: #aaa;*/
+/*}*/
 
-p.glow {
-    animation: glow 1s infinite alternate-reverse;
-}
+/*p.glow {*/
+/*    animation: glow 1s infinite alternate-reverse;*/
+/*}*/
 
-@keyframes glow {
-    from { text-shadow: 0 0 20px rgb(255, 255, 0); }
-    to { text-shadow: 0 0 20px rgb(255, 115, 0); }
-}
+/*@keyframes glow {*/
+/*    from { text-shadow: 0 0 20px rgb(255, 255, 0); }*/
+/*    to { text-shadow: 0 0 20px rgb(255, 115, 0); }*/
+/*}*/
 
-#overlay.active #overlayin {
-    opacity: 0;
-    animation: spinIn 1s ease-in-out;
-    animation-fill-mode: forwards;
-}
+/*#overlay.active #overlayin {*/
+/*    opacity: 0;*/
+/*    animation: spinIn 1s ease-in-out;*/
+/*    animation-fill-mode: forwards;*/
+/*}*/
 
-#overlayin * {
-    margin: 0px;
-}
-
-#sound {
-    width: 40px;
-    height: 30px;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    /*content: url('sound-on.webp');*/
-    display: block;
-    outline: none;
-    user-select: none;
-}
-
-#sound:checked {
-    content: url('assets/sound-off.webp');
-}
+/*#overlayin * {*/
+/*    margin: 0px;*/
+/*}*/
 
 .status {
     margin-top: 5px;
