@@ -5,7 +5,7 @@ let t = 0;
 let num_clicks = 0;
 
 function startTimer() {
-    console.log("starting timer");
+    //console.log("starting timer");
     timer = setInterval(function () {
         t++;
         document.getElementById("timer").innerHTML = ("000" + t).substr(-3);
@@ -36,14 +36,14 @@ function generateGrid() {
     message.style.visibility = "hidden";
     if(status.exploded === true){
         stopTimer();
-        console.log("You lost");
+        //console.log("You lost");
         message.innerHTML = "You lost! Click on the menu to begin";
         message.style.visibility = "visible";
     }
 
     if(status.exploded === false && status.done === true){
         stopTimer();
-        console.log("You won");
+        //console.log("You won");
         message.innerHTML = "You won! Click on the menu to begin";
         message.style.visibility = "visible";
     }

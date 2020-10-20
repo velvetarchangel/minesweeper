@@ -90,13 +90,13 @@ let MSGame = (function(){
                 }
                 mines[row] = s;
             }
-            console.log("Mines and counts after sprinkling:");
-            console.log(mines.join("\n"), "\n");
+            //console.log("Mines and counts after sprinkling:");
+           // console.log(mines.join("\n"), "\n");
         }
         // uncovers a cell at a given coordinate
         // this is the 'left-click' functionality
         uncover(row, col) {
-            console.log("uncover", row, col);
+            //console.log("uncover", row, col);
             // if coordinates invalid, refuse this request
             if( ! this.validCoord(row,col)) return false;
             // if this is the very first move, populate the mines, but make
@@ -126,11 +126,11 @@ let MSGame = (function(){
         // puts a flag on a cell
         // this is the 'right-click' or 'long-tap' functionality
         mark(row, col) {
-            console.log("mark", row, col);
+            //console.log("mark", row, col);
             // if coordinates invalid, refuse this request
             if( ! this.validCoord(row,col)) return false;
             // if cell already uncovered, refuse this
-            console.log("marking previous state=", this.arr[row][col].state);
+            //console.log("marking previous state=", this.arr[row][col].state);
             if( this.arr[row][col].state === STATE_SHOWN) return false;
             // accept the move and flip the marked status
             this.nmarked += this.arr[row][col].state == STATE_MARKED ? -1 : 1;
