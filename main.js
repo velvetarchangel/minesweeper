@@ -63,7 +63,7 @@ function generateGrid() {
                         array = g.getRendering();
                         generateGrid();
                         num_clicks++;
-                        console.log(num_clicks);
+                        //console.log(num_clicks);
                         if (num_clicks === 1) {
                             startTimer();
                         }
